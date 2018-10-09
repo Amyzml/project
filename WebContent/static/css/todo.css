@@ -1,0 +1,114 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../img/todo.jpg");
+}
+.naver{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    
+    background-color: #fff;
+}
+.naver a{
+    font-size: 24px;
+    text-decoration: none;
+}
+.container{
+    width: 600px;
+    margin: 0px auto;
+}
+.input-wrapper{
+    height: 40px;
+    background-color: rgba(0,0,0,0.3);
+    line-height: 40px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+.input-wrapper input{
+    outline: none;
+    border: 0px;
+    color: #fff;
+    background: transparent;
+    width: 584px; 
+     padding: 0px 8px;
+     text-shadow: 0px 1px 1px rosybrown;
+}
+.input-wrapper input::-webkit-input-placeholder{
+     color: #fff;
+}
+.todoList{
+    padding: 0px;
+}
+.todoList li{
+    height: 40px;
+    padding:0px 8px;
+    margin: 8px 0px;
+     border-radius: 2px;
+     font-size: 14px;
+    list-style-type: none;
+    box-shadow: 0px 1px 1px #ccc;
+    background-color:rgba(255,255,255,0.8);
+}
+.todoList a{
+   
+     text-decoration: none;
+}
+.todoList .checkbox{
+   width: 12px;
+   height: 12px;
+   border-radius: 2px;
+   margin: 0px 8px;
+   border: 1px solid #000;
+   display: inline-block;
+  
+}
+.todoList .text{
+    height: 40px;
+    line-height: 40px;
+    color: #2c3e50;
+}
+
+.todoList-done{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 20px;
+}
+.todoList-done li{
+    margin: 8px 0px;
+    padding: 0px;
+    height: 40px;
+    list-style-type: none;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color:rgba(255,255,255,0.2);
+}
+.todoList-done a{
+     text-decoration: none;
+}
+.todoList-done .checkbox{
+   width: 12px;
+   height: 12px;
+   border-radius: 2px;
+   margin: 0px 8px;
+   border: 1px solid #7f8c8d;
+   display: inline-block;
+   position: relative;
+}
+.todoList-done .text{
+     height: 40px;
+    line-height: 40px;
+    text-decoration: line-through;
+
+    color: #7f8c8d;
+}
+.todoList-done .checkbox::after{
+    content: "\f00c";
+    font-family: "FontAwesome";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+}
+.todoList-done a{
+    color: #888;
+}

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>web1</display-name>
+	
+	
+	<listener>
+		<listener-class>com.zml.servlet.listener.MyServletContextListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.zml.servlet.listener.MyHttpSessionListener</listener-class>
+	</listener>
+	
+		<context-param>
+	 		<param-name>name</param-name>
+	 		<param-value>rootroot</param-value>
+	 	</context-param>
+	
+	
+	
+	
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.zml.servlet.filter.EncodingFilter</filter-class>
+		
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+   <filter>
+		<filter-name>ValidateFilter</filter-name>
+		<filter-class>com.zml.servlet.filter.ValidateFilter</filter-class>	
+	</filter>
+	<filter-mapping>
+		<filter-name>ValidateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+
+
+
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.zml.servlet.loginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddBookServlet</servlet-name>
+		<servlet-class>com.zml.servlet.AddBookServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddBookServlet</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BookListServlet</servlet-name>
+		<servlet-class>com.zml.servlet.BookListServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>BookListServlet</servlet-name>
+		<url-pattern>/list</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>delServlet</servlet-name>
+		<servlet-class>com.zml.servlet.delServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>delServlet</servlet-name>
+		<url-pattern>/del</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EditServlet</servlet-name>
+		<servlet-class>com.zml.servlet.EditServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EditServlet</servlet-name>
+		<url-pattern>/edit</url-pattern>
+	</servlet-mapping>
+
+   <servlet>
+		<servlet-name>AboutServlet</servlet-name>
+		<servlet-class>com.zml.servlet.AboutServlet</servlet-class>
+		
+		
+		
+		<init-param>
+	 		<param-name>name</param-name>
+	 		<param-value>rootroot</param-value>
+	 	</init-param>
+	 	<init-param>
+	 		<param-name>password</param-name>
+	 		<param-value>123123</param-value>
+	 	</init-param>
+	 	
+ 		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AboutServlet</servlet-name>
+		<url-pattern>/about</url-pattern>
+	</servlet-mapping>
+ 
+   <servlet>
+		<servlet-name>LogoOutServlet</servlet-name>
+		<servlet-class>com.zml.servlet.LogoOutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogoOutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>	
+
+
+	 <servlet>
+		<servlet-name>SetCookieServlet</servlet-name>
+		<servlet-class>com.zml.servlet.SetCookieServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetCookieServlet</servlet-name>
+		<url-pattern>/set/cookie</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>GetCookieServlet</servlet-name>
+		<servlet-class>com.zml.servlet.GetCookieServler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetCookieServlet</servlet-name>
+		<url-pattern>/get/cookie</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>DelCookieServlet</servlet-name>
+		<servlet-class>com.zml.servlet.DelCookieServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetCookieServlet</servlet-name>
+		<url-pattern>/del/cookie</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>PayServlet</servlet-name>
+		<servlet-class>com.zml.servlet.PayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PayServlet</servlet-name>
+		<url-pattern>/pay</url-pattern>
+	</servlet-mapping>	
+	
+	
+	
+	<error-page>
+			<error-code>404</error-code>
+			<location>/WEB-INF/views/error/404.jsp</location>
+	</error-page>
+	
+	<error-page>
+			<error-code>500</error-code>
+			<location>/WEB-INF/views/error/500.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>com.zml.it.DataAccessException</exception-type>
+		<location>/WEB-INF/views/error/DataAccessException.jsp</location>
+	</error-page>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

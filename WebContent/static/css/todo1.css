@@ -1,0 +1,72 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../img/todo.jpg");
+}
+.naver{
+    height: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+.naver a{
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.container{
+    width: 600px;
+    margin: 0px auto;
+}
+.input-wrapper{
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+    margin: 20px 0px;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.3);
+}
+.input-wrapper input{
+    outline: none;
+    border: 0px;
+    color: #fff;
+    background: transparent;
+    font-size: 14px;
+    margin: 0px 8px;
+    height: 40px;
+    line-height: 40px;
+    text-shadow: 0px 1px 1px #000;
+}
+.input-wrapper input::-webkit-input-placeholder{
+    color: #fff;
+}
+.todoList li{
+    list-style-type: none;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+    padding: 0px;
+    height: 40px;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px #ccc;
+    background-color: rgba(255,255,255,0.8);
+}
+.todoList {
+   margin: 0px;
+   padding: 0px;
+    
+}
+.todoList .checkbox{
+   height: 10px;
+   width: 10px;
+   border-radius: 2px;
+   border: 1px solid #ccc;
+   display: inline-block;
+   margin: 0px 8px;
+}
+.todoList a{
+    text-decoration: none;
+}
+.todoList .text{
+    font-size: 14px;
+}
